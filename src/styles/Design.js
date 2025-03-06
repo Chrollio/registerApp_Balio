@@ -33,5 +33,18 @@ export const regdesignstyle = StyleSheet.create({
         padding: 12,
         marginBottom: 15,
         borderRadius: 5,
+        color: "black",
+    },
+    button: {
+        backgroundColor: "#c66b3d",
+        paddingVertical: 12,
+        borderRadius: 8,
+        alignItems: "center",
+        marginTop: 10,
+    },
+    buttonText: {
+        color: "white",
+        fontSize: 16,
+        fontWeight: "bold",
     },
 });
