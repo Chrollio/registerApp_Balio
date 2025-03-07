@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Text, TextInput, View, Alert, TouchableOpacity } from "react-native"; // Added TouchableOpacity
-import { regdesignstyle } from "./src/styles/Design";
+import { Text, TextInput, View, Alert, TouchableOpacity, Image } from "react-native";
+import { regdesignstyle } from "./src/styles/Design"; // Your provided styles
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -33,7 +33,32 @@ const App = () => {
   return (
     <View style={regdesignstyle.container}>
       <View style={regdesignstyle.box}>
-        <Text style={regdesignstyle.title}>Register App</Text>
+        <View style={regdesignstyle.introContainer}>
+        <Image 
+           source={require('./src/assets/smiley.jpg')}   // Replace with your image URL or local image
+          style={regdesignstyle.logo} 
+        />
+
+        <Text style={regdesignstyle.title}>Smiley App</Text>
+        </View>
+         {/* First Name & Last Name Side by Side */}
+         <View style={regdesignstyle.rowContainer}>
+          <TextInput
+            value={firstname}
+            style={[regdesignstyle.input, regdesignstyle.halfInput, regdesignstyle.firstInput]}
+            placeholder="First Name"
+            placeholderTextColor="black"
+            onChangeText={setFirstname}
+          />
+
+          <TextInput
+            value={lastname}
+            style={[regdesignstyle.input, regdesignstyle.halfInput]}
+            placeholder="Last Name"
+            placeholderTextColor="black"
+            onChangeText={setLastname}
+          />
+        </View>
 
         <TextInput
           value={username}
@@ -53,22 +78,6 @@ const App = () => {
         />
 
         <TextInput
-          value={firstname}
-          style={regdesignstyle.input}
-          placeholder="First Name"
-          placeholderTextColor="black"
-          onChangeText={setFirstname}
-        />
-
-        <TextInput
-          value={lastname}
-          style={regdesignstyle.input}
-          placeholder="Last Name"
-          placeholderTextColor="black"
-          onChangeText={setLastname}
-        />
-
-        <TextInput
           value={email}
           style={regdesignstyle.input}
           placeholder="Email"
@@ -80,6 +89,13 @@ const App = () => {
         <TouchableOpacity style={regdesignstyle.button} onPress={handleRegister}>
           <Text style={regdesignstyle.buttonText}>Register</Text>
         </TouchableOpacity>
+
+        <View style={regdesignstyle.rowContainer2}>
+            <Text>Already have an account? </Text>
+            <TouchableOpacity onPress={() => console.log("Navigate to login")}>
+                <Text style={regdesignstyle.ToOtherLink}>Click here</Text>
+            </TouchableOpacity>
+        </View>
 
       </View>
     </View>

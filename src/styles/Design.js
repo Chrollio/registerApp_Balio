@@ -24,7 +24,6 @@ export const regdesignstyle = StyleSheet.create({
         fontSize: 24,
         fontWeight: "bold",
         textAlign: "center",
-        marginBottom: 20,
     },
     input: {
         width: "100%",
@@ -46,5 +45,41 @@ export const regdesignstyle = StyleSheet.create({
         color: "white",
         fontSize: 16,
         fontWeight: "bold",
+    },
+    
+    rowContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        
+    },
+    halfInput: {
+        flex: 1,
+    },
+    firstInput: {
+        marginRight: 10,
+    },
+
+    ToOtherLink:{
+        color: 'blue', 
+        textDecorationLine: 'underline',
+    },
+
+    rowContainer2:{
+        flexDirection: "row",
+        justifyContent: "center",  // This centers horizontally
+        alignItems: "center",      // This centers vertically (optional, for extra alignment)
+        marginTop: 15,
+    },
+
+    introContainer:{
+        flexDirection: "row",
+        justifyContent: "center", 
+        alignItems: "center",    
+        marginBottom: 15,
+    },
+
+    logo:{
+        width: 120,
+        height: 120,
     },
 });
